@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Dep {
 	private Integer did;
+	private int dep;
 	private String dname;
 	public Dep() {
 		super();
