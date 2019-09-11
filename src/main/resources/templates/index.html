@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <link type="text/css" rel="stylesheet" th:href="@/css/style.css"> -->
+</head>
+<body>
+index.html/templates<br>
+欢迎 [[${session.user}]] 登录<br>
+<a th:href="@{/emps}">显示所有员工</a><br>
+<!-- <span class="red" th:class=${mycss}>/templates/index.html</span><br> -->
+<a th:href="@{/user/add}">msg</a>
+<!--  <span th:text="${a}" ></span><br>
+<span th:each="stu:${stus}" th:text="${stu}"></span> -->
+</body>
+</html>

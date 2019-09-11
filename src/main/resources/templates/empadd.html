@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+欢迎 [[${session.user}]] 登录<br>
+<form th:action="@{/emp}" method="post">
+	 员工编号:<input type="text" name="eid"/><br>
+	员工姓名:<input type="text" name="ename"/><br>
+	入职时间:<input type="text" name="date"/><br>
+	 所属部门:<select name="dep.did">
+		 <option th:each="dep:${deps}" 
+		 th:text="${dep.dname}" th:value="${dep.did}"></option>
+	</select><br>
+	<input type="submit" value="确认添加">
+</form>
+</table>
+</body>
+</html>

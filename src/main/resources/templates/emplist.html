@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+欢迎 [[${session.user}]] 登录<br>
+<a th:href="@{/emp}">添加</a>
+<table>
+	<tr>
+		<td>员工编号</td>
+		<td>员工姓名</td>
+		<td>入职时间</td>
+		<td>部门名称</td>
+		<td></td>
+	</tr>
+	<tr th:each="emp:${emps}">
+		<td>[[${emp.eid}]]</td>
+		<td>[[${emp.ename}]]</td>
+		<td>[[${#dates.format(emp.date,'yyyy MMMM dd')}]]</td>
+		<td>[[${emp.dep.dname}]]</td>
+		<td>
+			<a th:href="@{/update/}+${emp.eid}">修改</a>
+			<a th:href="@{/delete/}+${emp.eid}">删除</a>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
